@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="./css/style.css">
     <style>
         .block {
-            width: 200px;
-            height: 200px;
+            width: 400px;
+            height: 300px;
         }
 
         .circle {
@@ -21,31 +21,65 @@
             height: 100px;
         }
 
-        .badge {
+        .circle2 {
             width: 32px;
             height: 32px;
         }
-        
     </style>
 </head>
 
 <body>
+
+
+    <!-- 整理 -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="sun" viewBox="0 0 16 16">
+            <path
+                d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+        </symbol>
+        <symbol id="info-fill" viewBox="0 0 16 16">
+            <path
+                d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
+        </symbol>
+        <symbol id="exclamation-triangle-fill" viewBox="0 0 16 16">
+            <path
+                d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+        </symbol>
+    </svg>
+
     <div class="container py-4 ">
         <div class="row g-5">
+            <!-- 內容 -->
             <div class="col-12 col-lg-8">
-                <div class="px-5">
+                <div class="bg-light p-4 rounded-2 shadow-sm">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">首頁</a></li>
+                            <li class="breadcrumb-item"><a href="#">教學</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Bootstrap Grid</li>
+                        </ol>
+                    </nav>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            文章分類
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">教學</a></li>
+                            <li><a class="dropdown-item" href="#">資源分享</a></li>
+                            <li><a class="dropdown-item" href="#">實作範例</a></li>
+                        </ul>
+                    </div>
                     <div class=" bg-primary-subtle p-3 rounded-2 shadow-sm">
-                        <img class="img-fluid w-100 h-100"
-                            src="/BoosStrap/text/hello/img.jpg"
-                            alt="">
+                        <img class="img-fluid w-100 h-100" src="/BoosStrap/text/hello/img.jpg" alt="">
                         <h1 class="text-primary">Bootstrap Grid：打造網頁佈局的完美解決方案</h1>
                         <div style="white-space: pre-line;">
                             <p class="text-dark fs-6">
-                            嘿，大家好！今天我們要一起探索  Bootstrap 的 <abbr title="網格">Grid</abbr>
+                                嘿，大家好！今天我們要一起探索 Bootstrap 的 <abbr title="網格">Grid</abbr>
                                 系統，這是設計師和開發者的秘密武器，能夠輕鬆打造出令人驚艷的網頁佈局。快跟著我們一起踏上這趟有趣的旅程吧！
                             </p>
-                            <img src="/BoosStrap/text/hello/img2.jpg" alt=""
-                                class="img-thumbnail float-end clearfix" style="width: 150px; height: 200px;">
+                            <img src="/BoosStrap/text/hello/img2.jpg" alt="" class="img-thumbnail float-end clearfix"
+                                style="width: 150px; height: 200px;">
 
 
                             在網頁設計中，佈局是關鍵要素之一。Bootstrap 的 Grid 系統提供了一套簡單而強大的工具，讓我們能夠有效地管理和組織網頁中的內容。
@@ -83,6 +117,7 @@
                                     </figcaption>
                                 </figure>
                             </div>
+
                             嘿，現在是時候發揮你的創意，用 Bootstrap Grid 打造出一個令人驚艷的網頁佈局吧！這個強大的工具將讓你的網頁更具結構性和視覺吸引力。加油，我們期待看到你的精彩作品！♪
 
                             <p class="text-success">
@@ -99,7 +134,8 @@
                                 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                             </span>
                         </div>
-                        <h2 class="fs-3 text-primary">更多文章</h2>
+                        <!-- 更多文章 -->
+                        <h2 class="fs-3 text-primary mb-4">更多文章</h2>
                         <div class="row row-cols-2 g-3">
                             <div class="col order-1">
                                 <div class="p-3 bg-body rounded-2 shadow-sm">
@@ -129,58 +165,170 @@
                                         元件，我們可以輕鬆打造出專業又方便使用的表單～</p>
                                 </div>
                             </div>
+
                         </div>
-                        <table class="table table-dark mt-3 text-aligh-center">
-                            <thead>
-                                <tr >
-                                    <th scope="col">編號</th>
-                                    <th scope="col">元件</th>
-                                    <th scope="col">英文名稱</th>
-                                    <th scope="col">描述</th>
-                                    <th scope="col">連結</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="table-warning">
-                                    <th scope="row">1</th>
-                                    <td>網格</td>
-                                    <td>Grid</td>
-                                    <td>Bootstrap的佈局系統，用於創建靈活的網頁佈局</td>
-                                    <td><a href="https://getbootstrap.com/docs/5.3/layout/grid/">1</a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>按鈕</td>
-                                    <td>Button</td>
-                                    <td>使用不同樣式和大小的按鈕增加互動性和功能</td>
-                                    <td><a href="https://getbootstrap.com/docs/5.3/components/buttons/">2</a></td>
-                                </tr>
-                                <tr class="table-warning">
-                                    <th scope="row">3</th>
-                                    <td>模式對話框</td>
-                                    <td>Modal </td>
-                                    <td>創建視窗對話框，用於顯示詳細內容或進行操作</td>
-                                    <td><a href="https://getbootstrap.com/docs/5.3/components/modal/">3</a></td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>圖片</td>
-                                    <td>Image</td>
-                                    <td>輕鬆添加圖片到網頁並進行適當的調整和排版</td>
-                                    <td><a href="https://getbootstrap.com/docs/5.3/content/images/">4</a></td>
-                                </tr>
-                                <tr class="table-warning">
-                                    <th scope="row">5</th>
-                                    <td>表格</td>
-                                    <td>Table</td>
-                                    <td>建立具有排序和過濾功能的美觀表格，展示數據內容</td>
-                                    <td><a href="https://getbootstrap.com/docs/5.3/content/tables/">5</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <h2 class="fs-3 text-primary mb-4">留言</h2>
+                        <form>
+                            <div class="mb-3 form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="請輸入姓名">
+                                <label for="name" class="form-label">姓名</label>
+                                <div class="form-text">暱稱或姓名</div>
+                                <!-- form-text 說明文字 -->
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <input type="email" class="form-control" id="email">
+                                    <span class="input-group-text">@example.com</span>
+                                </div>
+                                <div class="form-text"></div>
+                                <!-- form-text 說明文字 -->
+                            </div>
+                            <div class="mb-3 form-floating">
+                                <textarea class="form-control" name="" id="reply" rows="5"
+                                    placeholder="tell me"></textarea>
+                                <label for="reply" class="form-label">留言</label>
+                            </div>
+                            <div class="mb-3">
+                                <label for="more" class="form-label">還想瞭解關於 Boostrap 的...</label>
+                                <input class="form-control" list="moreList" id="more" placeholder="輸入想瞭解的內容">
+                                <datalist id="moreList">
+                                    <option value="按鈕">Buuton</option>
+                                    <option value="模式對話框">Model</option>
+                                    <option value="圖片">Image</option>
+                                    <option value="表格">Table</option>
+                                </datalist>
+                            </div>
+                            <div class="mb-3">
+                                <label for="info" class="form-label">從哪裡得知文章?</label>
+                                <select class="form-select" id="info">
+                                    <option value="1">Google 搜尋</option>
+                                    <option value="2">Facebook 貼文</option>
+                                    <option value="3">朋友分享</option>
+                                </select>
+                            </div>
+                            <div class="form-check mb-3 form-switch">
+                                <input class="form-check-input" type="checkbox" value="" id="subscribe" role="switch">
+                                <label class="form-check-label" for="subscribe">
+                                    我想訂閱電子報，不錯過每一篇教學！
+                                </label>
+                            </div>
+                            <div class="mb-3">
+                                <button type="sumbit" class="btn btn-primary">送出</button>
+                                <button type="button" class="btn btn-secondary focus-ring"
+                                    style="--bs-focus-ring-color: rgba(var(--bs-secondary-rgb), .25)">取消</button>
+
+                                <button type="button" class="btn btn-info d-inline-flex align-items-center"
+                                    id="alertBtn">
+                                    <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill ">
+                                        <use xlink:href="#sun" />
+                                    </svg>
+                                    點我給你一個驚喜</button>
+                                <div id="alert"></div>
+                            </div>
+                        </form>
+                        <div class="accordion mb-4" id="accrodion">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#item1" aria-expanded="true" aria-controls="item1">
+                                        加強網頁互動！Bootstrap Modal 教學
+                                    </button>
+                                </h2>
+                                <div id="item1" class="accordion-collapse collapse show" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        讓我們一起探索 Bootstrap 的 Modal 功能，這是一個強大的互動元件，可以讓我們在網頁中顯示彈出視窗，實現更多元化的互動效果。在這篇教學中，
+                                        我們將學習如何使用 Bootstrap的 Modal，包括觸發機制、自訂樣式和動畫效果，讓我們的網頁更加生動有趣～
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#item2" aria-expanded="false" aria-controls="item2">
+                                        華麗又實用！打造漂亮按鈕的 Bootstrap 教學
+                                    </button>
+                                </h2>
+                                <div id="item2" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        在這篇教學中，我們將一起探索 Bootstrap 的按鈕元件，讓我們的網頁華麗又實用！我們將學習如何使用不同的按鈕樣式、大小和狀態，並添加圖標或下拉選單等功能。
+                                        透過 Bootstrap的強大按鈕元件，我們可以輕鬆打造出各種吸引人的互動元素～
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#item3" aria-expanded="false" aria-controls="item3">
+                                        簡化表單設計！Bootstrap Form 教學
+                                    </button>
+                                </h2>
+                                <div id="item3" class="accordion-collapse collapse" data-bs-parent="#accordion">
+                                    <div class="accordion-body">
+                                        讓我們來簡化表單設計的過程吧！在這篇教學中，我們將探索 Bootstrap 的 Form
+                                        元件，讓表單設計變得輕鬆又美觀。我們將學習如何使用不同的表單控制項、佈局工具和驗證功能，
+                                        提升用戶體驗並節省開發時間。透過 Bootstrap 的強大 Form 元件，我們可以輕鬆打造出專業又方便使用的表單～
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-dark mt-3  table-hover table-borderless caption-top text-nowrap ">
+                                <caption>這個表格提供了一個簡單的概覽，介紹了一些常見的 Bootstrap 元件及其功能：</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">編號</th>
+                                        <th scope="col">元件</th>
+                                        <th scope="col">英文名稱</th>
+                                        <th scope="col">描述</th>
+                                        <th scope="col">連結</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table table-group-divider">
+                                    <tr class="table-warning">
+                                        <th scope="row">1</th>
+                                        <td>網格</td>
+                                        <td>Grid</td>
+                                        <td>Bootstrap的佈局系統，用於創建靈活的網頁佈局</td>
+                                        <td><a
+                                                href="https://getbootstrap.com/docs/5.3/layout/grid/">https://getbootstrap.com/docs/5.3/layout/grid/</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td class="">按鈕</td>
+                                        <td>Button</td>
+                                        <td>使用不同樣式和大小的按鈕增加互動性和功能</td>
+                                        <td><a href="https://getbootstrap.com/docs/5.3/components/buttons/">2</a></td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <th scope="row">3</th>
+                                        <td>模式對話框</td>
+                                        <td>Modal </td>
+                                        <td>創建視窗對話框，用於顯示詳細內容或進行操作</td>
+                                        <td><a href="https://getbootstrap.com/docs/5.3/components/modal/">3</a></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">4</th>
+                                        <td colspan="2" class="">圖片</td>
+                                        <td>輕鬆添加圖片到網頁並進行適當的調整和排版</td>
+                                        <td><a href="https://getbootstrap.com/docs/5.3/content/images/">4</a></td>
+                                    </tr>
+                                    <tr class="table-warning">
+                                        <th scope="row">5</th>
+                                        <td>表格</td>
+                                        <td>Table</td>
+                                        <td>建立具有排序和過濾功能的美觀表格，展示數據內容</td>
+                                        <td><a href="https://getbootstrap.com/docs/5.3/content/tables/">5</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
             </div>
+
             <div class="col-12 col-lg-4">
                 <div class="text-bg-light p-3 rounded-2">
                     <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">最新文章</h2>
@@ -191,9 +339,10 @@
                                 <div>100人看過</div>
                                 <div>2023/5/18</div>
                             </div>
-                            <div class="ratio ratio-1x1 w-50">
+                            <div class="h-100">
+                                <!-- "ratio ratio-1x1 w-50" -->
                                 <img src="/BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg" alt=""
-                                    class="object-fit-cover ">
+                                    class="w-100 h-100 object-fit-cover rounded-2">
                             </div>
                         </div>
                         <!-- 以上 方法一 -->
@@ -210,12 +359,13 @@
                             簡化表單設計！Bootstrap Form 教學
                             <div>2023/5/22</div>
                             <div
-                                class="position-absolute top-0 start-0 badge text-bg-danger translate-middle d-flex justify-content-center align-items-center rounded-circle">
+                                class="position-absolute top-0 start-0 circle2 text-bg-danger translate-middle d-flex justify-content-center align-items-center rounded-circle">
                                 1</div>
                         </div>
-                        
+
                     </div>
                 </div>
+
                 <div class="block text-bg-light p-3 rounded-2 sticky-top shadow-sm">
                     <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">Jiee'S BLOG</h2>
                     <div class="vstack align-items-center">
@@ -224,18 +374,18 @@
                                 class="w-100 h-100 object-fit-cover">
                         </div>
                         <h4 class="text-primary text-uppercase fs-4">Jiee</h4>
-                        <span class="border border-light rounded-pill p-2">前端工程師</span>
+                        <div class="badge text-bg-primary rounded-pill mb-2">前端工程師</span>
+                        </div>
+                        <dl class="row">
+                            <dt class="col-3">TEL</dt>
+                            <dd class="col-9">0900-000-000</dd>
+                            <dt class="col-3">Email</dt>
+                            <dd class="col-9">wujia51819@gmail.com</dd>
+                        </dl>
                     </div>
-                    <dl class="row">
-                        <dt class="col-3">TEL</dt>
-                        <dd class="col-9">0900-000-000</dd>
-                        <dt class="col-3">Email</dt>
-                        <dd class="col-9">wujia51819@gmail.com</dd>
-                    </dl>
                 </div>
             </div>
-        </div>
-        <!-- <div class="dropdown">
+            <!-- <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Dropdown button
       </button>
@@ -245,11 +395,34 @@
         <li><a class="dropdown-item" href="#">Something else here</a></li>
       </ul>
     </div> -->
-    </div>
-    <script src="/hi/JS/bootstrap.bundle.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        </div>
+        <script src="/BoosStrap/hi/JS/bootstrap.bundle.js"></script>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script> -->
+
+        <script>
+
+            const alertPlaceholder = document.getElementById('alert')
+            const appendAlert = (message, type) => {
+                const wrapper = document.createElement('div')
+                wrapper.innerHTML = [
+                    `<div class="alert alert-${type} alert-dismissible mt-3" role="alert">`,
+                    `<div class="d-inline-flex align-items-center">
+                    <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" class="bi flex-shrink-0 me-2 d-flex align-items-center"aria-label="Info:"><use xlink:href="#sun"/></svg>
+                    ${message}</div>`,
+                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                    '</div>'
+                ].join('')
+                alertPlaceholder.append(wrapper)
+            }
+
+            const alertTrigger = document.getElementById('alertBtn')
+            if (alertTrigger) {
+                alertTrigger.addEventListener('click', () => {
+                    appendAlert('你好 你知道ChatGpt嗎？', 'info')
+                })
+            }</script>
 </body>
 
 </html>
