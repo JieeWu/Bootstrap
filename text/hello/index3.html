@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box2 {
+            width: 300px;
+            padding: 10px;
+            border: #ef5c28 2px solid;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            background: black;
+        }
+
+        .ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #fixed-height {
+            /* width: 100%; */
+            height: 1.25em;
+            overflow: hidden;
+            transition: overflow 1s ease-in;
+            background-color: lightblue;
+            color: red;
+            z-index: 0;
+            /* opacity: 0.5; */
+        }
+
+        #fixed-height:hover {
+            overflow: visible;
+            height: auto;
+            position: absolute;
+            /* opacity: 1; */
+        }
+
+        #right-below {
+            background: lightgreen;
+            color: black;
+            z-index: 0;
+        }
+
+        .animated-text {
+            animation: textAnimation 2s infinite;
+        }
+
+        @keyframes textAnimation {
+            0% {
+                transform: scale(1);
+                color: rgba(99, 184, 255, 0.8)
+            }
+
+            50% {
+                transform: scale(1);
+                color: rgba(255, 105, 180, 0.8);
+
+
+            }
+
+            100% {
+                transform: scale(1);
+                color: rgba(153, 102, 255, 0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id='fixed-height'>
+        <div id='overlap-on-hover'>
+            Hover to expand. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+            Hover to expand. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+            Hover to expand. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+            deserunt mollit anim id est laborum.
+        </div>
+    </div>
+    <div id='right-below'>
+        Overlap me please and don't show me!
+    </div> -->
+    <!-- <div class="box">
+        <p class="JQellipsis">Astral Web是一群對網路充滿熱情的團隊，我們相信網路的力量無遠弗屆，人人都有機會開創網路事業。一邊享受網路事業帶來的樂趣，一邊秉持著工作即是玩樂的精神，不斷激發各種靈感為客戶提高收益，提供最完善的服務。</p>
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(function(){
+                var len = 50; // 超過50個字以"..."取代
+                $(".JQellipsis").each(function(i){
+                    if($(this).text().length>len){
+                        $(this).attr("title",$(this).text());
+                        var text=$(this).text().substring(0,len-1)+"...";
+                        $(this).text(text);
+                    }
+                });
+            });
+            </script> -->
+
+    <p class="animated-text">Hello, world!</p>
+
+    <body class="body">
+        <div class="box"></div>
+    </body>
+
+    <script>
+        var elBox = document.querySelector('.box');
+        elBox.addEventListener('click', function (e) {
+            e.stopPropagation();
+            alert('box');
+        });
+
+        var elBody = document.querySelector('.body');
+        elBody.addEventListener('click', function () {
+            alert('body');
+        });
+    </script>
+</body>
+
+</html>
