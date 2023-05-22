@@ -77,6 +77,29 @@
             }
         }
 
+        .animated-text2 {
+            animation: textAnimation2 1.5s infinite;
+        }
+
+        .animated-text3 {
+            animation: textAnimation3 1.5s infinite;
+        }
+
+
+        @keyframes textAnimation3 {
+            0% {
+                background-color: rgba(91, 192, 235, 0.8);
+            }
+
+            50% {
+                background-color: rgba(247, 164, 190, 0.8);
+            }
+
+            100% {
+                background-color: rgba(255, 162, 89, 0.8);
+            }
+        }
+
         .gif {}
     </style>
 </head>
@@ -186,6 +209,23 @@
                             <span class="text-break">
                                 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                             </span>
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item disabled"><a class="page-link" href="#">前一頁</a></li>
+                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item "><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item "><a class="page-link" href="#">下一頁</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- 進度條 -->
+                        <div class="progress mb-3" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                            aria-valuemax="100">
+                            <div class="progress-bar progress-bar-striped bg-info" style="width: 50%" role="progressbar"
+                                aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%
+                                <div class="progress-bar" style="width: 50%"></div>
+                            </div>
                         </div>
                         <!-- 頁籤 -->
                         <ul class="nav nav-tabs" id="tab" role="tablist">
@@ -210,8 +250,9 @@
                         <!-- 頁籤內容 -->
                         <!-- target to id / button id to aria-labelledby / -->
                         <div class="tab-content" id="tabcontent">
+                            <!-- 表格 -->
                             <div class="tab-pane fade show active" id="tableTabPane" role="tabpanel"
-                                aria-labelledby="tableTab" tabindex="0"><!-- 表格 -->
+                                aria-labelledby="tableTab" tabindex="0">
                                 <div class="table-responsive">
                                     <table
                                         class="table table-dark mt-3  table-hover table-borderless caption-top text-nowrap ">
@@ -272,7 +313,8 @@
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="cardTabpane" role="tabpanel" aria-labelledby="cardTab"
-                                tabindex="0"><!-- 更多文章 -->
+                                tabindex="0">
+                                <!-- 卡片 -->
                                 <h2 class="fs-3 text-primary mb-3 mt-3">更多文章</h2>
                                 <div class="row row-cols-2 g-3">
                                     <div class="col order-1">
@@ -305,7 +347,7 @@
                                             <div class="card-body">
                                                 <h4 class="card-title text-truncate">簡化表單設計！Bootstrap Form 教學</h4>
                                                 <span>2023/05/22</span>
-                                                <p class="card-text">讓我們來簡化表單設計的過程吧！在這篇教學中，我們將探索 Bootstrap 的 Form
+                                                <p class="card-text ">讓我們來簡化表單設計的過程吧！在這篇教學中，我們將探索 Bootstrap 的 Form
                                                     元件，讓表單設計變得輕鬆又美觀。我們將學習如何使用不同的表單控制項、佈局工具和驗證功能，提升用戶體驗並節省開發時間。透過
                                                     Bootstrap
                                                     的強大 Form
@@ -314,12 +356,33 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col order-4">
+                                        <div class="card h-100">
+                                            <div class="card-body placeholder-glow">
+                                                <h4 class="card-title text-truncate"><span
+                                                        class="placeholder col-12"></span></h4>
+                                                <span class="placeholder col-7"></span>
+                                                <p class="card-text ">
+                                                    <span class="placeholder-lg col-7 "></span>
+                                                    <span class="placeholder-sm col-4"></span>
+                                                    <span class="placeholder-xs col-4"></span>
+                                                    <span class="placeholder col-6"></span>
+                                                    <span class="placeholder col-8"></span>
+                                                </p>
+                                                <a href="#" class=" d-flex justify-content-center align-items-center ">
+                                                    <button class="btn btn-primary disabled placeholder col-6"></button>
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="accordiontabpane" role="tabpanel"
                                 aria-labelledby="accordiontab" tabindex="0">
-                                </form>
                                 <!-- 手風琴 -->
+                                </form>
+
                                 <div class="accordion mb-4" id="accrodion">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
@@ -453,10 +516,48 @@
                                 </div>
                                 <div id="alert"></div>
                             </div>
+                        </form>
+                        <!-- 吐司 -->
+                        <button type="button" class="btn btn-success mt-3" id="Toastbtn">Open toast</button>
+                        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                            <div id="toast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 
+                                <div class="toast-header">
+                                    <strong class="me-auto"></strong>
+                                    <small class="text-body">11分鐘前</small>
+                                    <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="toast-body fs-1">
+                                    老師真香
+                                </div>
+                                <img src="/BoosStrap/text/hello/WWW.gif" class="rounded me-2 w-50" alt="...">
+                            </div>
+                        </div>
+                        <!-- popover -->
 
+                        <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
+                            data-bs-content="Disabled popover"><button type="button" class="btn btn-lg btn-danger mt-3"
+                                data-bs-toggle="popover" data-bs-title="Popover想跟你打招呼"
+                                data-bs-content="老師真香">點我點我</button>
+                        </span>
+                        <!-- tooltip -->
+                        <button type="button" class="btn btn-secondary mt-3" data-bs-toggle="tooltip"
+                            data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="老師真香">
+                            touch me can it.
+                        </button>
+                        <!-- modal btn -->
+                        <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
+                            data-bs-target="#modal1">
+                            click me.
+                        </button>
+                        <!-- offcanvas -->
+                        <a class="btn btn-primary mt-3" data-bs-toggle="offcanvas" href="#offcanvas" role="button"
+                            aria-controls="offcanvas">
+                            open offcanvas
+                        </a>
+                        
                     </div>
-
                 </div>
             </div>
 
@@ -550,7 +651,74 @@
                 </div>
             </div>
             <!-- 文章列表 -->
+            <!-- Modal -->
+            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="開啟modal 1" aria-hidden="true"
+            data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5 " id="開啟modal 1">老師香嗎？？？</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
 
+                        <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
+                        <p class="fs-1 modal ">是的，老師真香！</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary"
+                            data-bs-dismiss="modal">香</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#modal2">開啟modal 2</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="開啟modal 2" aria-hidden="true"
+                data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 " id="exampleModaLabel">老師香嗎？？？</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
+                            <p class="fs-1 modal ">是的，老師真香！</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">香</button>
+                            <!-- 關閉modal 2 , 回到modal1 -->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1
+                            ">開啟modal 1</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- offcanvas 內容 -->
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasExampleLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div>
+                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+                  </div>
+                  <div class="dropdown mt-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                      Dropdown button
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             <!-- <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Dropdown button
@@ -566,6 +734,7 @@
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script> -->
+
 
         <script>
 
@@ -588,7 +757,30 @@
                 alertTrigger.addEventListener('click', () => {
                     appendAlert('你好 你知道ChatGpt嗎？', 'info')
                 })
-            }</script>
+            }
+        </script>
+        <!-- 吐司 -->
+        <script>
+            const toastTrigger = document.getElementById('Toastbtn')
+            const toastLiveExample = document.getElementById('toast')
+            if (toastTrigger) {
+                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+                toastTrigger.addEventListener('click', () => {
+                    toastBootstrap.show()
+                })
+            }
+        </script>
+
+        <!-- 按鈕-->
+        <script>
+            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+            const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+        </script>
+        <!-- tooltips -->
+        <script>
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script>
 </body>
 
 </html>
