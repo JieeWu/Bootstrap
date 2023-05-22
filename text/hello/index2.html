@@ -25,6 +25,57 @@
             width: 32px;
             height: 32px;
         }
+
+        /* 文字特效 */
+        .animated-text {
+            animation: textAnimation 1.5s infinite;
+        }
+
+        @keyframes textAnimation {
+            0% {
+                transform: scale(1);
+                color: rgba(99, 184, 255, 0.8)
+            }
+
+            50% {
+                transform: scale(1);
+                color: rgba(255, 105, 180, 0.8);
+
+
+            }
+
+            100% {
+                transform: scale(1);
+                color: rgba(153, 102, 255, 0.8);
+            }
+        }
+
+        .VIP {
+            position: absolute;
+            top: -20%;
+            left: -35%;
+            color: red;
+            z-index: 0;
+            /* background-color: rgba(0, 183, 255,0.2); */
+        }
+
+        .animated-text2 {
+            animation: textAnimation2 1.5s infinite;
+        }
+
+        @keyframes textAnimation2 {
+            0% {
+                color: rgba(91, 192, 235, 0.8);
+            }
+
+            50% {
+                color: rgba(247, 164, 190, 0.8);
+            }
+
+            100% {
+                color: rgba(255, 162, 89, 0.8);
+            }
+        }
     </style>
 </head>
 
@@ -214,16 +265,19 @@
                                 </label>
                             </div>
                             <div class="mb-3">
-                                <button type="sumbit" class="btn btn-primary">送出</button>
-                                <button type="button" class="btn btn-secondary focus-ring"
-                                    style="--bs-focus-ring-color: rgba(var(--bs-secondary-rgb), .25)">取消</button>
+                                <div class="btn-group" role="group">
+                                    <button type="sumbit" class="btn btn-primary">送出</button>
+                                    <button type="button" class="btn btn-secondary focus-ring"
+                                        style="--bs-focus-ring-color: rgba(var(--bs-secondary-rgb), .25)">取消</button>
 
-                                <button type="button" class="btn btn-info d-inline-flex align-items-center"
-                                    id="alertBtn">
-                                    <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill ">
-                                        <use xlink:href="#sun" />
-                                    </svg>
-                                    點我給你一個驚喜</button>
+                                    <button type="button" class="btn btn-info d-inline-flex align-items-center"
+                                        id="alertBtn">
+                                        <svg width="16" height="16" fill="currentColor"
+                                            class="bi bi-brightness-high-fill ">
+                                            <use xlink:href="#sun" />
+                                        </svg>
+                                        點我給你一個驚喜</button>
+                                </div>
                                 <div id="alert"></div>
                             </div>
                         </form>
@@ -334,10 +388,14 @@
                     <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">最新文章</h2>
                     <div class="d-flex flex-column-reverse ">
                         <div class="p-2 mb-3 text-bg-secondary d-flex justify-content-between" style="height: 150px;">
-                            <div class="d-flex flex-column">
-                                <div class="mb-auto">加強網頁互動！Bootstrap Modal 教學</div>
+                            <div class="d-flex flex-column position-relative">
+                                <div class="mb-auto mt-3">加強網頁互動！Bootstrap Modal 教學</div>
                                 <div>100人看過</div>
                                 <div>2023/5/18</div>
+                                <div
+                                    class="position-absolute top-0 start-0 text-bg-danger translate-middle  rounded-pill badge fs-6 ">
+                                    3
+                                </div>
                             </div>
                             <div class="h-100">
                                 <!-- "ratio ratio-1x1 w-50" -->
@@ -346,17 +404,22 @@
                             </div>
                         </div>
                         <!-- 以上 方法一 -->
-                        <div class="p-2 mb-3 text-bg-secondary d-flex flex-column justify-content-between"
+                        <!-- 最新文章：標籤1 -->
+                        <div class="p-2 mb-3 text-bg-secondary d-flex flex-column justify-content-between position-relative"
                             style="height: 150px;">
-                            <div> 華麗又實用！打造漂亮按鈕的 Bootstrap 教學</div>
+                            <div class="mt-1"> 華麗又實用！打造漂亮按鈕的 Bootstrap 教學</div>
                             <div>
                                 <span class="d-block">100人看過</span>
                                 <span class="d-block">2023/5/19</span>
+                                <span
+                                    class="position-absolute top-0 start-100 text-bg-danger translate-middle  rounded-pill badge fs-6">
+                                    99+</span>
                             </div>
                         </div>
                         <!-- 以上 方法二 -->
+                        <!-- 最新文章：標籤2 -->
                         <div class="p-2 mb-3 text-bg-secondary position-relative">
-                            簡化表單設計！Bootstrap Form 教學
+                            <div class="mt-1">簡化表單設計！Bootstrap Form 教學</div>
                             <div>2023/5/22</div>
                             <div
                                 class="position-absolute top-0 start-0 circle2 text-bg-danger translate-middle d-flex justify-content-center align-items-center rounded-circle">
@@ -365,7 +428,26 @@
 
                     </div>
                 </div>
-
+                <!-- 文章列表 -->
+                <div class="col-12 mt-3 mb-3">
+                    <div class="text-bg-light p-4 rounded-2 shadow-sm">
+                        <h2 class="border-bottom pb-2 border-primary border-3 fs-4 text-primary mb-3">文章列表</h2>
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-center align-items-center">
+                                教學
+                                <span class="badge bg-primary rounded-pill">14</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-center align-items-center">
+                                資源分享
+                                <span class="badge bg-primary rounded-pill">2</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-center align-items-center">
+                                實作範例
+                                <span class="badge bg-primary rounded-pill">1</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="block text-bg-light p-3 rounded-2 sticky-top shadow-sm">
                     <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">Jiee'S BLOG</h2>
                     <div class="vstack align-items-center">
@@ -373,8 +455,11 @@
                             <img src="/BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg" alt=""
                                 class="w-100 h-100 object-fit-cover">
                         </div>
-                        <h4 class="text-primary text-uppercase fs-4">Jiee</h4>
-                        <div class="badge text-bg-primary rounded-pill mb-2">前端工程師</span>
+                        <div class="position-relative">
+                            <div class="VIP badge animated-text2">VIP5</div>
+                            <h4 class=" text-uppercase fs-4 animated-text ">青蛙來也</h4>
+                        </div>
+                        <div class="badge text-bg-dark rounded-pill mb-2 ">前端工程師</span>
                         </div>
                         <dl class="row">
                             <dt class="col-3">TEL</dt>
@@ -385,6 +470,8 @@
                     </div>
                 </div>
             </div>
+            <!-- 文章列表 -->
+
             <!-- <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Dropdown button
