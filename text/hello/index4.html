@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/BoosStrap/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
     <style>
         img {
             width: 100px;
@@ -24,19 +26,31 @@
             padding-left: 1rem;
             border-left: 4px solid #888;
         }
-        .box2{}
+
+        .box2 {}
     </style>
 </head>
 
 <body>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a id="屏東縣" class="dropdown-item" href="#">屏東縣</a></li>
+            <li><a id="2" class="dropdown-item" href="#">Another action</a></li>
+            <li><a id="3" class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+    </div>
     <!-- <p id="total"></p> -->
     <div id="contain"></div>
-    <h1>台灣獨立書店名冊<span>( 資料來源：政府資料開放平台 )</span></h1>
+
     <div id="contain"></div>
     <script src="index4.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="/BoosStrap/hi/JS/bootstrap.bundle.js"></script>
 </body>
 
 </html>

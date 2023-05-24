@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1.下拉式選單選取不同縣市</p>
+    <p> 2.顯示選取城市的當下天氣資料</p>
+    <p> 3.顯示選取城市未來一週天氣資料及溫度</p>
+    <select id="selectCity">
+    </select>地區
+
+    <div class="weatherContain"></div>
+
+    <script>
+        /* 天氣API開放資料變數定義 */
+        const weatherOpenData = 'https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName='
+        /* 天氣API開放資料變數定義 */
+
+
+
+
+        /* HTML DOM事件抓取 */
+        let weatherContain = document.getElementById("weatherContain");
+        let selectCity = document.getElementById('selectCity');
+
+
+
+
+
+        /* 取得API與讀取API */
+        async function getWeatherAPI() {
+            try {
+                const getJsonAPIturnToJS = await fetch(weatherOpenData, { method: 'get' });
+                const thisAPIcanUse = await getJsonAPIturnToJS.json();
+                countryList = [];
+                countryList.push(...thisAPIcanUse.records.location);
+                // console.log(countryList);  
+                //這裡有成功抓到資料
+
+                const selectCityOption = countryList.map((v) => {
+                    return `<option value="${v.locationName}">${v.locationName}</option>`
+
+                })
+                selectCity.innerHTML = selectCityOption;
+                console.log(selectCityOption);
+                //這裡有成功抓到資料
+            } catch (error) { console.error('錯誤', error); }
+        }
+        getWeatherAPI(); //執行啟用
+        /* 取得API與讀取API */
+
+    </script>
+</body>
+
+</html>
