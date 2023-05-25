@@ -10,6 +10,7 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/BoosStrap/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="/scss/style.css">
     <style>
         .block {
             width: 400px;
@@ -100,13 +101,20 @@
             }
         }
 
-        .gif {}
+        .accordion-text {
+            --bs-accordion-btn-bg: lightcoral;
+
+        }
+
+        .progress-w {
+            width: 33%;
+        }
     </style>
 </head>
 
 <body>
 
-
+    <button class="btn-primary">TEST</button>
     <!-- 整理 -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="sun" viewBox="0 0 16 16">
@@ -136,7 +144,7 @@
                         </ol>
                     </nav>
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        <button class="btn btn-primary2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             文章分類
                         </button>
@@ -222,10 +230,8 @@
                         <!-- 進度條 -->
                         <div class="progress mb-3" role="progressbar" aria-valuenow="50" aria-valuemin="0"
                             aria-valuemax="100">
-                            <div class="progress-bar progress-bar-striped bg-info" style="width: 50%" role="progressbar"
-                                aria-label="Basic example" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%
-                                <div class="progress-bar" style="width: 50%"></div>
-                            </div>
+                            <div id="progress" class="progress-bar progress-w"></div>
+
                         </div>
                         <!-- 頁籤 -->
                         <ul class="nav nav-tabs" id="tab" role="tablist">
@@ -381,19 +387,18 @@
                             <div class="tab-pane fade" id="accordiontabpane" role="tabpanel"
                                 aria-labelledby="accordiontab" tabindex="0">
                                 <!-- 手風琴 -->
-                                </form>
 
                                 <div class="accordion mb-4" id="accrodion">
                                     <div class="accordion-item">
                                         <h2 class="accordion-header">
                                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                                 data-bs-target="#item1" aria-expanded="true" aria-controls="item1">
-                                                加強網頁互動！Bootstrap Modal 教學
+                                                <p class="">加強網頁互動！Bootstrap Modal 教學</p>
                                             </button>
                                         </h2>
                                         <div id="item1" class="accordion-collapse collapse show"
                                             data-bs-parent="#accordion">
-                                            <div class="accordion-body">
+                                            <div class="accordion-body ">
                                                 讓我們一起探索 Bootstrap 的 Modal
                                                 功能，這是一個強大的互動元件，可以讓我們在網頁中顯示彈出視窗，實現更多元化的互動效果。在這篇教學中，
                                                 我們將學習如何使用 Bootstrap的 Modal，包括觸發機制、自訂樣式和動畫效果，讓我們的網頁更加生動有趣～
@@ -556,7 +561,7 @@
                             aria-controls="offcanvas">
                             open offcanvas
                         </a>
-                        
+
                     </div>
                 </div>
             </div>
@@ -652,6 +657,7 @@
             </div>
             <!-- 文章列表 -->
             <!-- Modal -->
+<<<<<<< HEAD
             <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="" aria-hidden="true"
             data-bs-backdrop="static" data-bs-keyboard="false">
             <div class="modal-dialog">
@@ -662,19 +668,29 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
+=======
+            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="開啟modal 1" aria-hidden="true"
+                data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5 " id="開啟modal 1">老師香嗎？？？</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+>>>>>>> 3ec257291672bbb20ef1c68fd1bbf52f2e48b002
 
-                        <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
-                        <p class="fs-1 modal ">是的，老師真香！</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary"
-                            data-bs-dismiss="modal">香</button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#modal2">開啟modal 2</button>
+                            <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
+                            <p class="fs-1 modal ">是的，老師真香！</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">香</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#modal2">開啟modal 2</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
             <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="開啟modal 2" aria-hidden="true"
                 data-bs-backdrop="static" data-bs-keyboard="false">
                 <div class="modal-dialog">
@@ -698,27 +714,29 @@
                 </div>
             </div>
             <!-- offcanvas 內容 -->
-            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvas"
+                aria-labelledby="offcanvasExampleLabel">
                 <div class="offcanvas-header">
-                  <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <div>
-                    Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-                  </div>
-                  <div class="dropdown mt-3">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                      Dropdown button
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Action</a></li>
-                      <li><a class="dropdown-item" href="#">Another action</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                  </div>
+                    <div>
+                        Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
+                        images, lists, etc.
+                    </div>
+                    <div class="dropdown mt-3">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                            Dropdown button
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
+            </div>
             <!-- <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
         Dropdown button
@@ -780,6 +798,39 @@
         <script>
             const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
             const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+        </script>
+        <script>
+            var Progress = document.getElementById("progress");
+            var cardTab = document.getElementById("cardTab");
+            var tableTab = document.getElementById("tableTab");
+            var accordiontab = document.getElementById("accordiontab");
+
+            function pgchange() {
+                var data = [tableTab, cardTab, accordiontab];
+ 
+                // if ($data[0] === tableTab) {
+                //     `${data[0]}`.addEventListener('click', function () {
+                //         Progress.style.width = "100%";
+                //     })
+                // };
+                // if ($data[1] === cardTab) {
+                //     Progress.style.width = "66%";
+                // };
+                // if ($data[2] === accordiontab) {
+                //     Progress.style.width = "100%";
+                // };
+            }
+            // tableTab.addEventListener('click', function () {
+            //     Progress.style.width = "33%";
+            // });
+            // cardTab.addEventListener('click', function () {
+            //     Progress.style.width = "66%";
+            // });
+            // accordiontab.addEventListener('click', function () {
+            //     Progress.style.width = "100%";
+            // });
+            pgchange();
+            // <div id="progress" class="progress-bar" style="width: 50%"></div>
         </script>
 </body>
 
