@@ -28,36 +28,82 @@ function print(dataset) {
     })
 }
 
-var list1 = document.getElementById("屏東縣");
+var list_ul = document.getElementById("list_ul");
 var dataUrl = document.querySelector("#contain");
 var allData = [];
-fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName=', {})
+fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName=')
     .then((response) => {
         // 這裡會得到一個 ReadableStream 的物件
         console.log(response);
         // 可以透過 blob(), json(), text() 轉成可用的資訊
         return response.json();
     }).then((jsonData) => {
-        console.log(jsonData.records.location);
+        // console.log(jsonData.records.location);
         // print(jsonData.records.location);
         allData.push(...jsonData.records.location);
+        const listarray = allData.map((v) => {
+            // return `<li>${v.locationName}</li>`
+            return `<a id="${v.locationName}"class="dropdown-item">${v.locationName}</a>`
+        })
+        list_ul.innerHTML = listarray.join('');
     }).catch((err) => {
         console.log('錯誤:', err);
     });
-
-console.log("allData", allData);
-let newCard = document.createElement("div")
-newCard.className = "infoCard"
-
-list1.addEventListener('click', function () {
-    for (let i = 0; i < allData.length; i++) {
-        if (list1.id === allData[i].locationName) {
-            document.querySelector("#contain").appendChild(newCard)
-            let newCardInfo = `
-            <h3 class="name">${allData[i].locationName}</h3>
-        `
-            newCard.innerHTML = newCardInfo
+var pushData = [];
+var pushData2 = [];
+// 抓取天氣裡面的天氣
+// function llll() {
+//     fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName=')
+//         .then((response) => {
+//             // 這裡會得到一個 ReadableStream 的物件
+//             console.log(response);
+//             // 可以透過 blob(), json(), text() 轉成可用的資訊
+//             return response.json();
+//         }).then((jsonData) => {
+//             pushData.push(...jsonData.records.location);
+//             for (let i = 0; i < pushData.length; i++) {
+//                 pushData2.push(pushData[i].weatherElement[i].time[i].parameter.parameterName);
+//             }
+//             console.log("ttt", pushData2);
+//         })
+// }
+// llll();
+function llll() {
+    fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName=')
+    .then((response) => {
+        return response.json();
+    })
+    .then((jsonData) => {
+        pushData = jsonData.records.location;
+        for (let i = 0; i < pushData.length; i++) {
+            let weatherElement = pushData[i].weatherElement;
+            let weatherElementNames = [];
+            for (let j = 0; j < weatherElement.length; j++) {
+                let time = weatherElement[j].time;
+                for (let k = 0; k < time.length; k++) {
+                    let parameter = time[k].parameter;
+                    weatherElementNames.push(parameter.parameterName);
+                }
+            }
+            pushData2.push(weatherElementNames);
         }
-    }
-})
-console.log(list1.id);
+        console.log("pushData2:", pushData2);
+    });
+}
+llll();
+console.log()
+
+// let newCard = document.createElement("div")
+// newCard.className = "infoCard"
+
+// list1.addEventListener('click', function () {
+//     for (let i = 0; i < allData.length; i++) {
+//         if (list1.id === allData[i].locationName) {
+//             document.querySelector("#contain").appendChild(newCard)
+//             let newCardInfo = `
+//             <h3 class="name">${allData[i].locationName}</h3>
+//         `
+//             newCard.innerHTML = newCardInfo
+//         }
+//     }
+// })

@@ -27,21 +27,20 @@
             border-left: 4px solid #888;
         }
 
-        .box2 {}
+        .dropdown-menu {
+            padding: 5px;
+        }
+        
     </style>
 </head>
 
 <body>
-    <div class="dropdown">
+    <div class="dropdown .box3">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown button
         </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a id="屏東縣" class="dropdown-item" href="#">屏東縣</a></li>
-            <li><a id="2" class="dropdown-item" href="#">Another action</a></li>
-            <li><a id="3" class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
+        <ul id="list_ul" class="dropdown-menu" ></ul>
     </div>
     <!-- <p id="total"></p> -->
     <div id="contain"></div>
