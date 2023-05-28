@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navFixed {
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            margin-top: 0;
+            min-width: 100%;
+            opacity: 0.94;
+            transition: opacity .5s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="character__page">
+        <div
+            class="swiper-container character__swiper--page swiper-container-initialized swiper-container-horizontal swiper-container-thumbs">
+            <ul class="swiper-wrapper character__page--render swiper-pagination-custom"
+                style="transform: translate3d(-1008px, 0px, 0px); transition-duration: 0ms;">
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/op-public/2023/04/27/c19b1f75f760f7b9647ec40f098d9373_7505681269724585296.png"
+                        draggable="false">
+                    <p>琴</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620050860529.png"
+                        draggable="false">
+                    <p>安柏</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620053822998.png"
+                        draggable="false">
+                    <p>麗莎</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031619582799496.png"
+                        draggable="false">
+                    <p>凱亞</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620045417411.png"
+                        draggable="false">
+                    <p>芭芭拉</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620052156537.png"
+                        draggable="false">
+                    <p>迪盧克</p>
+                </li>
+                <li class="swiper-slide swiper-slide-prev" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620055086242.png"
+                        draggable="false">
+                    <p>雷澤</p>
+                </li>
+                <li class="swiper-slide swiper-slide-visible swiper-slide-active"
+                    style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620061388128.png"
+                        draggable="false">
+                    <p>溫迪</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200316/2020031620062662751.png"
+                        draggable="false">
+                    <p>可莉</p>
+                </li>
+                <li class="swiper-slide swiper-slide-active swiper-slide-thumb-active"
+                    style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200312/2020031220064997211.png"
+                        draggable="false">
+                    <p>班尼特</p>
+                </li>
+                <li class="swiper-slide swiper-slide-visible" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200315/2020031517364353226.png"
+                        draggable="false">
+                    <p>諾艾爾</p>
+                </li>
+                <li class="swiper-slide swiper-slide-visible" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200330/2020033022255259740.png"
+                        draggable="false">
+                    <p>菲謝爾</p>
+                </li>
+                <li class="swiper-slide swiper-slide-visible" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200723/2020072319191295930.png"
+                        draggable="false">
+                    <p>砂糖</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20200828/2020082818033037537.png"
+                        draggable="false">
+                    <p>莫娜</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20201106/2020110619070747009.png"
+                        draggable="false">
+                    <p>迪奧娜</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20201216/2020121611312455710.png"
+                        draggable="false">
+                    <p>阿貝多</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210331/2021033114495756816.png"
+                        draggable="false">
+                    <p>蘿莎莉亞</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210510/2021051011403585810.png"
+                        draggable="false">
+                    <p>優菈</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/uploadstatic/contentweb/20210824/2021082413342283115.png"
+                        draggable="false">
+                    <p>亞蘿伊</p>
+                </li>
+                <li class="swiper-slide" style="width: 110px; margin-right: 34px;"><img
+                        src="https://webstatic.hoyoverse.com/upload/op-public/2023/02/13/d1bd63a9d2f41a7bfa927811e219493d_5139997364906620073.png"
+                        draggable="false">
+                    <p>米卡</p>
+                </li>
+            </ul><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+        </div>
+        <div class="swiper-btn-prev"></div>
+        <div class="swiper-btn-next"></div>
+    </div>
+    <!--     
+最新文章：標籤1 
+    <div class="p-2 mb-3 text-bg-secondary d-flex flex-column justify-content-between position-relative"
+        style="height: 150px;">
+        <div class="mt-1"> 華麗又實用！打造漂亮按鈕的 Bootstrap 教學</div>
+        <div>
+            <span class="d-block">100人看過</span>
+            <span class="d-block">2023/5/19</span>
+            <span class="position-absolute top-0 start-0 text-bg-danger translate-middle  rounded-pill badge fs-6">
+                99+</span>
+        </div>
+    </div>
+    <以上 方法二 
+    最新文章：標籤2
+    <div class="p-2 mb-3 text-bg-secondary position-relative">
+        <div class="mt-1">簡化表單設計！Bootstrap Form 教學</div>
+        <div>2023/5/22</div>
+        <div
+            class="position-absolute top-0 start-0 circle2 text-bg-danger translate-middle d-flex justify-content-center align-items-center rounded-circle">
+            1</div>
+-->
+    </div>
+
+</body>
+
+</html>

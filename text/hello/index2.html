@@ -10,12 +10,20 @@
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="/BoosStrap/CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="/scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .block {
-            width: 400px;
-            height: 300px;
+        body {
+            background: rgba(91, 192, 235, 0.2);
         }
+
+        .location-right {
+            position: fixed;
+            top: 20%;
+            right: 0;
+        }
+
 
         .circle {
             width: 100px;
@@ -101,6 +109,8 @@
             }
         }
 
+
+
         .accordion-text {
             --bs-accordion-btn-bg: lightcoral;
 
@@ -109,12 +119,191 @@
         .progress-w {
             width: 33%;
         }
+
+        .text-color {
+            color: red;
+        }
+
+        .text-color2 {
+            color: blueviolet;
+        }
+
+        .vh-40 {
+            max-height: 40vh;
+        }
+
+        .icon-size {
+            font-size: 36px;
+        }
+
+        .userblog {
+            width: 270px;
+            position: fixed;
+            top: 50px;
+            right: 0;
+        }
+
+        @media screen and (max-width:2200px) {
+            .userblog {
+                position: unset;
+            }
+            
+            
+        }
+        @media screen and (max-width:1000px) {
+            .userblog {
+                display: none;
+            }
+            
+            
+        }
+        
+            
+        @media screen and (min-width:2200px) {
+            
+            .userblog2 {
+                display: none;
+            }
+        }
+
+
+        .line-absolute a {
+            position: relative;
+        }
+
+        .line-absolute a::after {
+            content: " ";
+            position: absolute;
+            right: 50%;
+            left: 50%;
+            bottom: 0px;
+            border-bottom: 1px solid black;
+            transition: .3s;
+        }
+
+        .line-absolute2 a:hover::after {
+            right: 30%;
+            left: 30%;
+        }
+
+        .header-nav {
+            position: sticky;
+            top: 0%;
+            left: 0;
+            background: white;
+            z-index: 1;
+            height: 110px;
+        }
+
+        .header-nav-img {
+            width: 14vh;
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+
+
+        .nav-li li {
+            font-size: 18px;
+            padding-top: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-right: 10px;
+        }
+
+        a:link {
+            color: #000000;
+        }
+
+        a:visited {
+            color: #000000;
+        }
+
+        a:hover {
+            color: #000000;
+        }
+
+        a:active {
+            color: #000000;
+        }
+
+        .nav-middle {
+            /* padding-right: 50px; */
+            width: 25vh;
+        }
+
+        /* 滾動到一定程度出現 */
+        .sidebar {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        .news__title {
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-size: 24px;
+            color: #000000;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .recommend__imgwrap {
+            width: 380px;
+            height: 190px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .nav-ul {
+            list-style: none;
+        }
+
+        .recommend__item {
+            position: relative;
+            width: 370px;
+            height: 400px;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0px 3px 7px 0px rgba(96, 96, 96, 0.35);
+            border-radius: 4px;
+            opacity: 0.9;
+        }
+
+        @media screen and (max-width:767px) {
+            .recommend__item {
+                position: relative;
+                width: 480px;
+                height: 400px;
+                background-color: rgba(255, 255, 255, 0.7);
+                box-shadow: 0px 3px 7px 0px rgba(96, 96, 96, 0.35);
+                border-radius: 4px;
+                opacity: 0.9;
+            }
+
+            .nav-start {
+                display: none;
+                z-index: 1;
+            }
+        }
+
+
+
+        .page2 {
+            line-height: 2;
+        }
+        @media screen and (max-width:1000px) {
+            
+            .logostart{
+                display: none;
+            }}
     </style>
 </head>
 
 <body>
-
-    <button class="btn-primary">TEST</button>
     <!-- 整理 -->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="sun" viewBox="0 0 16 16">
@@ -130,102 +319,152 @@
                 d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
         </symbol>
     </svg>
+    <div class="header-nav col-12 nav-star d-flex">
+        <ul class="nav nav-pills col-12">
+            <div class="col-2">
+                <li class="nav-item line-absolute line-absolute2 ">
+                    <img class="header-nav-img object-fit-cover" src="./frog3.png" alt="">
+                </li>
+            </div>
+            <div class="col-8 d-flex justify-content-center ">
+                <img class="nav-middle object-fit-cover logostart" src="./logo.jpg" alt="">
+            </div>
+            <div class="d-flex nav-li col-2 d-flex justify-content-end">
+                <li class="nav-item nav-po  line-absolute line-absolute2">
+                    <a class="nav-link  " href="#">關於</a>
 
-    <div class="container py-4 ">
+                </li>
+                <li class="nav-item line-absolute line-absolute2">
+                    <a class="nav-link" href="#">作品</a>
+                </li>
+                <li class="nav-item line-absolute line-absolute2">
+                    <a class="nav-link" href="#">公司</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="container">
         <div class="row g-5">
             <!-- 內容 -->
-            <div class="col-12 col-lg-8">
-                <div class="bg-light p-4 rounded-2 shadow-sm">
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">首頁</a></li>
-                            <li class="breadcrumb-item"><a href="#">教學</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Bootstrap Grid</li>
-                        </ol>
-                    </nav>
-                    <div class="dropdown">
-                        <button class="btn btn-primary2 dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            文章分類
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">教學</a></li>
-                            <li><a class="dropdown-item" href="#">資源分享</a></li>
-                            <li><a class="dropdown-item" href="#">實作範例</a></li>
-                        </ul>
+            <!-- Header -->
+            <div class="col-12 d-flex p-0">
+                <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="./image.png" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./2021021013065250274.jpg" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="./2021081211445474445.jpg" alt="">
+                        </div>
                     </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-8 p-0">
+                <div class="bg-light p-4 rounded-2 shadow-sm">
+
+
                     <div class=" bg-primary-subtle p-3 rounded-2 shadow-sm">
-                        <img class="img-fluid w-100 h-100" src="/BoosStrap/text/hello/img.jpg" alt="">
-                        <h1 class="text-primary">Bootstrap Grid：打造網頁佈局的完美解決方案</h1>
-                        <div style="white-space: pre-line;">
-                            <p class="text-dark fs-6">
-                                嘿，大家好！今天我們要一起探索 Bootstrap 的 <abbr title="網格">Grid</abbr>
-                                系統，這是設計師和開發者的秘密武器，能夠輕鬆打造出令人驚艷的網頁佈局。快跟著我們一起踏上這趟有趣的旅程吧！
-                            </p>
-                            <img src="/BoosStrap/text/hello/img2.jpg" alt="" class="img-thumbnail float-end clearfix"
-                                style="width: 150px; height: 200px;">
+                        <img class="img-fluid w-100 h-100 " src="./img.jpg" alt="">
+                        <!-- 第一頁 -->
+                        <div id="txt-1" class="test-content">
+                            <h1 class="text-shadow ps-2 pt-2 text-success"><b>納西妲 (草神)</b></h1>
+                            <div style="">
+                                <p class="text-dark fs-5 ps-2 page2">
+                                    <b>「小吉祥草王」</b>深居淨善宮內，向來不受重視，也很少被人提及。
 
+                                    她一刻不停地學習各種知識，只為更快成長為一位合格的神明，儘早地開始引導國民。
 
-                            在網頁設計中，佈局是關鍵要素之一。Bootstrap 的 Grid 系統提供了一套簡單而強大的工具，讓我們能夠有效地管理和組織網頁中的內容。
+                                    若不是「禁忌」的威脅日漸臨近，她又何嘗不想暫時休憩，親眼去看看須彌的無數生靈？
 
-                            首先，我們要認識兩個基本元素：列和欄。列就像是網格中的一行，而欄則是列中的一個小單位。透過列和欄的組合，我們可以建立出彈性且有結構的網頁佈局。
+                                    現在的她，只能於夢中遍覽五彩斑斕的世間盛景。
 
-                            在 Bootstrap 中，我們使用 .row 類別來創建一個列。這個類別會幫助我們將欄位放置在同一行中，讓它們保持整齊對齊。
+                                    在心靈的淨土中，她與陽光和微風作伴，與人類和動物交友，一起講故事，做遊戲，唱剛剛學會的歌…
 
-                            接著，我們使用 .col-* 類別來設定欄位的寬度比例。這個類別可以根據需要調整欄位的大小，讓它們適應不同的螢幕尺寸。
+                                    她將最美好的嚮往盡數傾注於夢境，但無論夜晚如何喧鬧，每當白日來臨，她的身畔又會重歸寂靜。
 
-                            <p class="lead">
-                                舉個例子來說，如果我們想要兩個欄位佔據同樣的寬度，可以使用 .col-6 類別，其中的數字表示佔據的比例。同樣地，如果我們想要四個欄位佔據相等的空間，可以使用 .col-3。
-                            </p>
+                                    她悠悠起身。睡眼惺忪之際，孤獨突如寒潮般襲來，她不由得抱緊了雙肩。
 
-                            另外，Bootstrap 的 Grid 系統還支援斷點（Breakpoints），根據不同的螢幕尺寸調整佈局。例如，我們可以使用 .col-md-* 類別來設定在中型螢幕上的欄位寬度。
+                                </p>
 
-                            在建立佈局時，<ins>記得保持簡潔且易於閱讀</ins>。<del>過度使用欄位和過多的嵌套</del>可能會讓佈局變得混亂，難以維護。<em>著重於清晰度和一致性</em>，讓網頁內容能夠自然地流動。
+                                <img src="./img3.png" alt="" class="img-thumbnail float-start clearfix me-3"
+                                    style="width: 250px; height: 250px;">
+                                <h1 class="text-info ps-2 pt-2"><b>綺良良</b></h1>
+                                <p class="text-dark fs-5  ps-4 page2 ">
+                                    稻妻知名快遞公司<b>「狛荷屋」</b>，聘用著一名有些特殊的員工。外表看起來是位打扮甜美的少女，背後卻長著兩條尾巴。她對待顧客大方得體，但私底下為了不讓快遞超時，時不時就會從房檐上悄無聲息地竄過…
+                                    對綺良良自己來說，這份工作如同珍寶。她熱愛著人類社會的一切，心醉於客戶們收到包裹時臉上露出的笑容。為此，她拚命地為每名顧客獻上最好的服務——畢竟，要是一個不小心被公司開除的話，她就只能回荒山野嶺做人們口中的「大妖怪」了。
+                                </p>
+                                <img src="./280px-浮世笑百姿_八重神子.webp" alt="" class="img-thumbnail float-end clearfix ms-2"
+                                    style="width: 250px; height: 250px;">
+                                <h1 class="ps-2 pt-2 d-flex justify-content-end text-color2"><b>八重神子</b></h1>
+                                <p class="text-dark fs-5  ps-2 page2">
+                                    鳴神大社的大巫女、狐之血脈的延續者、「永恆」的眷屬與友人…以及，輕小說出版社「八重堂」的恐怖總編。
 
-                            重要的是，Bootstrap Grid 系統不僅僅局限於基本的佈局。我們還可以進一步探索其他功能和選項，例如偏移（Offset）和嵌套（Nesting）。
+                                    不必追尋其中任何一面。每一面都是八重神子，每一面卻也無法成為真正的她。
 
-                            偏移允許我們在列中創建一些空白區域，讓內容有更好的視覺分隔效果。我們可以使用 .offset-* 類別來達到這個效果。例如，如果我們想要在一列中的第一個欄位前留出一些空間，可以使用
-                            .offset-2，其中的數字表示偏移的欄位數量。
+                                    各種姿態，都猶如鏡子的碎片，映射出截然不同的她。因諸多身份包裹，她亦成為了一塊被無數面御鏡包圍的寶鑽。
 
-                            嵌套是一種有趣且強大的功能，它允許我們在一個欄位中再次建立新的列和欄。這讓我們能夠在一個欄位中建立更複雜的佈局結構。使用 .row 和 .col-*
-                            來建立嵌套佈局，並根據需要繼續添加更多的欄位。
+                                    上百種面相，嚴肅或快活，悲憫或漠然。
 
-                            另外，Bootstrap Grid 系統還提供了一些實用的類別，例如對齊方式（Alignment）和內容填充（Padding）。我們可以使用 .justify-content-*
-                            來調整欄位的水平對齊方式，例如靠左對齊或置中對齊。而 .p-* 類別則可以用於設定欄位的內容填充。
-                            <div class="text-center text-lg-start">
-                                <figure>
-                                    <blockquote class="blockquote">除了基本的類別之外，Bootstrap Grid 還提供了更多進階的選項和自訂性。你可以參考
-                                        Bootstrap官方文件和範例，深入瞭解更多關於
-                                        Grid 系統的功能和用法。</blockquote>
-                                    <figcaption class="blockquote-footer"><cite title="May 18 Version">ChatGPT</cite>
-                                    </figcaption>
-                                </figure>
+                                    無人知曉真實，就像無人能輕易從秘林中找到一隻與過客擦肩的仙狐。
+
+                                    可若是狐狸注視著人…狐狸又將往何處去？
+                                </p>
+                                <p class="text-success">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd"
+                                            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                                    </svg>
+                                    更多原神角色內容：<a href="#" class="text-reset">https://zh.moegirl.org.cn/zh-tw/</a>
+                                </p>
                             </div>
-
-                            嘿，現在是時候發揮你的創意，用 Bootstrap Grid 打造出一個令人驚艷的網頁佈局吧！這個強大的工具將讓你的網頁更具結構性和視覺吸引力。加油，我們期待看到你的精彩作品！♪
-
-                            <p class="text-success">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                    class="bi bi-arrow-right" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                </svg>
-                                參考連結：<a href="#"
-                                    class="text-reset">https://getbootstrap.com/docs/5.3/utilities/text/</a>
-                            </p>
-
                             <span class="text-break">
                                 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                             </span>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item disabled"><a class="page-link" href="#">前一頁</a></li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item "><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item "><a class="page-link" href="#">下一頁</a></li>
-                                </ul>
-                            </nav>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination">
+                                <li class="page-item disabled"><a class="page-link" href="#">前一頁</a></li>
+                                <li id="t-content" class="page-item active" aria-current="page"><a
+                                        class="page-link">1</a>
+                                </li>
+                                <li id="t2-content" class="page-item "><a class="page-link">2</a></li>
+                                <li class="page-item "><a class="page-link">下一頁</a></li>
+                            </ul>
+                        </nav>
+                        <!-- 第二頁 -->
+                        <div id="txt-2" class="test2-content">
+                            黑色沙漠（Black Desert Online）是一款由韓國遊戲公司Pearl
+                            Abyss開發和發行的大型多人在線角色扮演遊戲（MMORPG）。該遊戲於2014年在韓國首次推出，並於2016年在全球范圍內上市。黑色沙漠以其引人入勝的遊戲世界、令人驚嘆的視覺效果和豐富的遊戲內容而聞名。
+
+                            黑色沙漠的遊戲世界被稱為「黑色沙漠」，是一個以中世紀幻想為背景的大陸。玩家可以在這個廣闊而美麗的世界中自由探索，採集資源、狩獵野獸、打造武器和裝備、建造住宅、進行貿易、參與戰爭等各種活動。
+
+                            遊戲提供了多種角色職業供玩家選擇，包括戰士、遊俠、巫師、女武神、武器大師、黑暗騎士、魔法師、劍士、狂戰士、小悍妮等等。每個職業都有其獨特的技能和戰鬥風格，玩家可以根據自己的偏好和遊戲目標來選擇最適合的職業。
+
+                            黑色沙漠的戰鬥系統非常精彩，動作流暢且技巧豐富。玩家可以進行近戰或遠程攻擊，使用各種技能和組合來擊敗敵人。遊戲中的戰鬥也非常激烈，玩家可以參與大規模的戰爭和PvP對戰，與其他玩家或敵對勢力展開激烈的戰鬥。
+
+                            此外，黑色沙漠還擁有一個豐富的經濟系統。玩家可以通過採集、煉獄、製造、貿易等方式獲得資源和財富。遊戲中還有大量的任務和活動可供玩家參與，例如探索迷宮、挑戰世界首領、參與公會活動等。
+
+                            黑色沙漠的圖形效果非常出色
+
+                            ，遊戲世界的細節和畫面非常精緻。遊戲還擁有一個強大的角色自定義系統，玩家可以根據自己的喜好和想像力來創建獨一無二的角色外觀。
+
+                            總之，黑色沙漠是一款深受玩家喜愛的大型多人在線角色扮演遊戲。它提供了一個充滿冒險和可能性的虛擬世界，玩家可以在其中追求自己的目標，體驗豐富多樣的遊戲內容和激動人心的戰鬥。
                         </div>
                         <!-- 進度條 -->
                         <div class="progress mb-3" role="progressbar" aria-valuenow="50" aria-valuemin="0"
@@ -507,7 +746,7 @@
                             </div>
                             <div class="mb-3">
                                 <div class="btn-group" role="group">
-                                    <button type="sumbit" class="btn btn-primary">送出</button>
+                                    <button type="submit" class="btn btn-primary">送出</button>
                                     <button type="button" class="btn btn-secondary focus-ring"
                                         style="--bs-focus-ring-color: rgba(var(--bs-secondary-rgb), .25)">取消</button>
 
@@ -534,27 +773,26 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="toast-body fs-1">
-                                    老師真香
+                                    閃亮亮！！！
                                 </div>
-                                <img src="/BoosStrap/text/hello/WWW.gif" class="rounded me-2 w-50" alt="...">
+                                <img src="./WWW.gif" class="rounded me-2 w-50" alt="...">
                             </div>
                         </div>
                         <!-- popover -->
 
                         <span class="d-inline-block" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus"
                             data-bs-content="Disabled popover"><button type="button" class="btn btn-lg btn-danger mt-3"
-                                data-bs-toggle="popover" data-bs-title="Popover想跟你打招呼"
-                                data-bs-content="老師真香">點我點我</button>
+                                data-bs-toggle="popover" data-bs-title="Popover想跟你打招呼" data-bs-content="">點我點我</button>
                         </span>
                         <!-- tooltip -->
                         <button type="button" class="btn btn-secondary mt-3" data-bs-toggle="tooltip"
-                            data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="老師真香">
+                            data-bs-placement="bottom" data-bs-custom-class="custom-tooltip" data-bs-title="閃亮亮唷">
                             touch me can it.
                         </button>
                         <!-- modal btn -->
                         <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal"
                             data-bs-target="#modal1">
-                            click me.
+                            click me
                         </button>
                         <!-- offcanvas -->
                         <a class="btn btn-primary mt-3" data-bs-toggle="offcanvas" href="#offcanvas" role="button"
@@ -566,52 +804,73 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-4">
-                <div class="text-bg-light p-3 rounded-2">
+            <div class="col-12 col-lg-4 ">
+                <div class="text-bg-light p-3 rounded-2 col-12">
                     <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">最新文章</h2>
-                    <div class="d-flex flex-column-reverse ">
-                        <div class="p-2 mb-3 text-bg-secondary d-flex justify-content-between" style="height: 150px;">
-                            <div class="d-flex flex-column position-relative">
-                                <div class="mb-auto mt-3">加強網頁互動！Bootstrap Modal 教學</div>
-                                <div>100人看過</div>
-                                <div>2023/5/18</div>
-                                <div
-                                    class="position-absolute top-0 start-0 text-bg-danger translate-middle  rounded-pill badge fs-6 ">
-                                    3
+                    <div class="d-flex flex-column">
+                        <!-- 最新文章 -->
+                        <div class="p-3 mb-3 bg-body rounded-2 shadow-sm d-flex position-relative z-0">
+                            <a href="" class="news__title ellipsis">
+                                <div class="recommend__imgwrap">
+                                    <img class="w-100 h-100" src="./more1.jpg" alt="">
                                 </div>
-                            </div>
-                            <div class="h-100">
-                                <!-- "ratio ratio-1x1 w-50" -->
-                                <img src="/BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg" alt=""
-                                    class="h-100 ratio ratio-1x1 d-flex float-end">
-                            </div>
+                                <h3 class="p-1 fs-4">過場動畫-「流星知願」｜原神</h3>
+                                <p class="fs-6">孩子的夢想簡單又直白。當她想看流星雨，夢中沉寂的夜空便會為她閃爍。</p>
+                            </a>
+                        </div>
+                        <div class="p-3 mb-3 bg-body rounded-2 shadow-sm d-flex position-relative z-0">
+                            <a href="" class="news__title ellipsis">
+                                <div class="recommend__imgwrap">
+                                    <img class="w-100 h-100" src="./more2.jpg" alt="">
+                                </div>
+                                <h3 class="p-1 fs-4">「塵世巡遊之約」網頁活動上線，參與有機會獲得5,000美元旅行基金！</h3>
+                                <p class="fs-6">邀請好友共赴提瓦特大陸的探索之旅，完成相應任務即可獲得贏得5000美元旅行基金的機會，伴你在旅程中留下珍貴回憶！</p>
+                            </a>
+                        </div>
+                        <div class="p-3 mb-3 bg-body rounded-2 shadow-sm d-flex position-relative z-0">
+                            <a href="" class="news__title ellipsis">
+                                <div class="recommend__imgwrap">
+                                    <img class="w-100 h-100" src="./more3.jpg" alt="">
+                                </div>
+                                <h3 class="p-1 fs-5">拾枝雜談-「綺良良：嗚喵疾行」｜原神</h3>
+                                <p class="fs-6">沿途的風景、美味的貓飯、路邊的紙箱…</p>
+                            </a>
                         </div>
                         <!-- 以上 方法一 -->
-                        <!-- 最新文章：標籤1 -->
-                        <div class="p-2 mb-3 text-bg-secondary d-flex flex-column justify-content-between position-relative"
-                            style="height: 150px;">
-                            <div class="mt-1"> 華麗又實用！打造漂亮按鈕的 Bootstrap 教學</div>
-                            <div>
-                                <span class="d-block">100人看過</span>
-                                <span class="d-block">2023/5/19</span>
-                                <span
-                                    class="position-absolute top-0 start-100 text-bg-danger translate-middle  rounded-pill badge fs-6">
-                                    99+</span>
-                            </div>
-                        </div>
-                        <!-- 以上 方法二 -->
-                        <!-- 最新文章：標籤2 -->
-                        <div class="p-2 mb-3 text-bg-secondary position-relative">
-                            <div class="mt-1">簡化表單設計！Bootstrap Form 教學</div>
-                            <div>2023/5/22</div>
-                            <div
-                                class="position-absolute top-0 start-0 circle2 text-bg-danger translate-middle d-flex justify-content-center align-items-center rounded-circle">
-                                1</div>
-                        </div>
-
                     </div>
                 </div>
                 <!-- 文章列表 -->
+                <div class="col-12 userblog2">
+                    <h2 class="border-bottom pb-2 border-secondary border-3 fs-4 pt-3">Jiee'S BLOG</h2>
+                    <div class="vstack align-items-center ">
+                        <div class="rounded-circle circle bg-secondary mb-2">
+                            <img src="./i2Qoltg-8ysmZbT3cSjg-jg.jpg " alt="" class="w-100 h-100 object-fit-cover">
+                        </div>
+    
+                        <!-- /BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg -->
+                        <div class="position-relative">
+                            <div class="VIP badge animated-text2">24y</div>
+                            <h4 class=" text-uppercase fs-4 animated-text ">青蛙來也</h4>
+                        </div>
+                        <div>
+                            <div class="badge text-bg-dark rounded-pill mb-2  ">
+                                <span class="animated-text">#前端工程師</span>
+                            </div>
+                            <div class="badge text-bg-dark rounded-pill mb-2  ">
+                                <span class="animated-text">#CB650R</span>
+                            </div>
+                            <div class="badge text-bg-dark rounded-pill mb-2  ">
+                                <span class="animated-text">#R150</span>
+                            </div>
+                        </div>
+                        <dl class="row">
+                            <dt class="col-3">TEL</dt>
+                            <dd class="col-9">0965-122-882</dd>
+                            <dt class="col-3">Email</dt>
+                            <dd class="col-9">wujia51819@gmail.com</dd>
+                        </dl>
+                    </div>
+                </div>
                 <div class="col-12 mt-3 mb-3">
                     <div class="text-bg-light p-4 rounded-2 shadow-sm">
                         <h2 class="border-bottom pb-2 border-primary border-3 fs-4 text-primary mb-3">文章列表</h2>
@@ -631,62 +890,28 @@
                         </ul>
                     </div>
                 </div>
-                <div class="block text-bg-light p-3 rounded-2 sticky-top shadow-sm">
-                    <h2 class="border-bottom pb-2 border-secondary border-3 fs-4">Jiee'S BLOG</h2>
-                    <div class="vstack align-items-center">
-                        <div class="rounded-circle circle bg-secondary mb-2">
-                            <img src="/BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg " alt=""
-                                class="w-100 h-100 object-fit-cover">
-                        </div>
 
-                        <!-- /BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg -->
-                        <div class="position-relative">
-                            <div class="VIP badge animated-text2">VIP5</div>
-                            <h4 class=" text-uppercase fs-4 animated-text ">青蛙來也</h4>
-                        </div>
-                        <div class="badge text-bg-dark rounded-pill mb-2 ">前端工程師</span>
-                        </div>
-                        <dl class="row">
-                            <dt class="col-3">TEL</dt>
-                            <dd class="col-9">0900-000-000</dd>
-                            <dt class="col-3">Email</dt>
-                            <dd class="col-9">wujia51819@gmail.com</dd>
-                        </dl>
-                    </div>
-                </div>
             </div>
+
             <!-- 文章列表 -->
             <!-- Modal -->
-<<<<<<< HEAD
             <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="" aria-hidden="true"
-            data-bs-backdrop="static" data-bs-keyboard="false">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h1 class="modal-title fs-5 " id="">老師香嗎？？？</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-=======
-            <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="開啟modal 1" aria-hidden="true"
                 data-bs-backdrop="static" data-bs-keyboard="false">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 " id="開啟modal 1">老師香嗎？？？</h1>
+                            <h1 class="modal-title fs-5 " id="">亮嗎？？？</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
->>>>>>> 3ec257291672bbb20ef1c68fd1bbf52f2e48b002
 
-                            <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
-                            <p class="fs-1 modal ">是的，老師真香！</p>
+                            <img class="bcolor animated-text3" src="./WWW.gif" alt="">
+                            <p class="fs-1 modal ">真亮！</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">香</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">不亮了</button>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modal2">開啟modal 2</button>
+                                data-bs-target="#modal2">開啟另一個異世界</button>
                         </div>
                     </div>
                 </div>
@@ -696,19 +921,19 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5 " id="exampleModaLabel">老師香嗎？？？</h1>
+                            <h1 class="modal-title fs-5 " id="exampleModaLabel">不夠亮嗎？？？</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
 
-                            <img class="bcolor animated-text3" src="/BoosStrap/text/hello/WWW.gif" alt="">
-                            <p class="fs-1 modal ">是的，老師真香！</p>
+                            <img class="bcolor animated-text3" src="./WWW.gif" alt="">
+                            <p class="fs-1 modal ">不夠亮！！</p>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">香</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">亮昏頭</button>
                             <!-- 關閉modal 2 , 回到modal1 -->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1
-                            ">開啟modal 1</button>
+                            ">回到現實世界</button>
                         </div>
                     </div>
                 </div>
@@ -737,101 +962,146 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div> -->
+            <div class="text-bg-light rounded-2 sticky-top shadow-sm userblog col-lg-2 col-12 sidebar content ">
+                <h2 class="border-bottom pb-2 border-secondary border-3 fs-4 pt-3">Jiee'S BLOG</h2>
+                <div class="vstack align-items-center">
+                    <div class="rounded-circle circle bg-secondary mb-2">
+                        <img src="./i2Qoltg-8ysmZbT3cSjg-jg.jpg " alt="" class="w-100 h-100 object-fit-cover">
+                    </div>
+
+                    <!-- /BoosStrap/text/hello/i2Qoltg-8ysmZbT3cSjg-jg.jpg -->
+                    <div class="position-relative">
+                        <div class="VIP badge animated-text2">24y</div>
+                        <h4 class=" text-uppercase fs-4 animated-text ">青蛙來也</h4>
+                    </div>
+                    <div>
+                        <div class="badge text-bg-dark rounded-pill mb-2  ">
+                            <span class="animated-text">#前端工程師</span>
+                        </div>
+                        <div class="badge text-bg-dark rounded-pill mb-2  ">
+                            <span class="animated-text">#CB650R</span>
+                        </div>
+                        <div class="badge text-bg-dark rounded-pill mb-2  ">
+                            <span class="animated-text">#R150</span>
+                        </div>
+                    </div>
+                    <dl class="row">
+                        <dt class="col-3">TEL</dt>
+                        <dd class="col-9">0965-122-882</dd>
+                        <dt class="col-3">Email</dt>
+                        <dd class="col-9">wujia51819@gmail.com</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
-        <script src="/BoosStrap/hi/JS/bootstrap.bundle.js"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+
+    </div>
+    <footer class="bg-light text-center text-lg-start col-12">
+        <!-- Copyright -->
+        <div class="text-center p-3 fs-6" style="background-color: rgba(91, 192, 235, 0.2)">
+            © 2023/05/28
+            <a class="text-dark fs-5" href="https://mdbootstrap.com/">Jie's Blog</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="./sakura.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
     crossorigin="anonymous"></script> -->
 
 
-        <script>
+    <script>
 
-            const alertPlaceholder = document.getElementById('alert')
-            const appendAlert = (message, type) => {
-                const wrapper = document.createElement('div')
-                wrapper.innerHTML = [
-                    `<div class="alert alert-${type} alert-dismissible mt-3" role="alert">`,
-                    `<div class="d-inline-flex align-items-center">
+        const alertPlaceholder = document.getElementById('alert')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible mt-3" role="alert">`,
+                `<div class="d-inline-flex align-items-center">
                     <svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill" class="bi flex-shrink-0 me-2 d-flex align-items-center"aria-label="Info:"><use xlink:href="#sun"/></svg>
                     ${message}</div>`,
-                    '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-                    '</div>'
-                ].join('')
-                alertPlaceholder.append(wrapper)
-            }
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+            alertPlaceholder.append(wrapper)
+        }
 
-            const alertTrigger = document.getElementById('alertBtn')
-            if (alertTrigger) {
-                alertTrigger.addEventListener('click', () => {
-                    appendAlert('你好 你知道ChatGpt嗎？', 'info')
-                })
-            }
-        </script>
-        <!-- 吐司 -->
-        <script>
-            const toastTrigger = document.getElementById('Toastbtn')
-            const toastLiveExample = document.getElementById('toast')
-            if (toastTrigger) {
-                const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
-                toastTrigger.addEventListener('click', () => {
-                    toastBootstrap.show()
-                })
-            }
-        </script>
+        const alertTrigger = document.getElementById('alertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('你好 你知道ChatGpt嗎？', 'info')
+            })
+        }
+    </script>
+    <!-- 吐司 -->
+    <script>
+        const toastTrigger = document.getElementById('Toastbtn')
+        const toastLiveExample = document.getElementById('toast')
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    </script>
 
-        <!-- 按鈕-->
-        <script>
-            const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-            const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-        </script>
-        <!-- tooltips -->
-        <script>
-            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-        </script>
-        <script>
-            var Progress = document.getElementById("progress");
-            var cardTab = document.getElementById("cardTab");
-            var tableTab = document.getElementById("tableTab");
-            var accordiontab = document.getElementById("accordiontab");
+    <!-- 按鈕-->
+    <script>
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+    </script>
+    <!-- tooltips -->
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+    <script>
+        var Progress = document.getElementById("progress");
+        var cardTab = document.getElementById("cardTab");
+        var tableTab = document.getElementById("tableTab");
+        var accordiontab = document.getElementById("accordiontab");
+        var content = document.getElementById("t-content");
+        var content2 = document.getElementById("t2-content");
+        var txt1 = document.getElementById("txt-1");
+        var txt2 = document.getElementById("txt-2");
 
-            function pgchange() {
-                var data = [tableTab, cardTab, accordiontab];
- 
-                // if ($data[0] === tableTab) {
-                //     `${data[0]}`.addEventListener('click', function () {
-                //         Progress.style.width = "100%";
-                //     })
-                // };
-                // if ($data[1] === cardTab) {
-                //     Progress.style.width = "66%";
-                // };
-                // if ($data[2] === accordiontab) {
-                //     Progress.style.width = "100%";
-                // };
-            }
-            // tableTab.addEventListener('click', function () {
-            //     Progress.style.width = "33%";
-            // });
-            // cardTab.addEventListener('click', function () {
-            //     Progress.style.width = "66%";
-            // });
-            // accordiontab.addEventListener('click', function () {
-            //     Progress.style.width = "100%";
-            // });
-            pgchange();
+        tableTab.addEventListener('click', function () {
+            Progress.style.width = "33%";
+        });
+        cardTab.addEventListener('click', function () {
+            Progress.style.width = "66%";
+        });
+        accordiontab.addEventListener('click', function () {
+            Progress.style.width = "100%";
+        });
+        content.addEventListener('click', function () {
+            txt1.style.display = "block";
+            txt2.style.display = "none";
+
+        });
+        content2.addEventListener('click', function () {
+            txt1.style.display = "none";
+            txt2.style.display = "block";
+        });
+
+        // pgchange();
             // <div id="progress" class="progress-bar" style="width: 50%"></div>
-        </script>
+    </script>
+    <script>
+        window.addEventListener('scroll', function () {
+            var sidebar = document.querySelector('.sidebar');
+            var contentHeight = document.querySelector('.content').offsetHeight;
+            var scrollPosition = window.scrollY;
+
+            if (scrollPosition >= contentHeight) {
+                sidebar.classList.add('show');
+            } else {
+                sidebar.classList.remove('show');
+            }
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/Ukenn2112/UkennWeb@3.0/index/web.js"></script>
 </body>
 
 </html>

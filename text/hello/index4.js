@@ -90,7 +90,22 @@ function llll() {
         console.log("pushData2:", pushData2);
     });
 }
-llll();
+function llll2() {
+    fetch('https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-ED14DFC8-4B2D-4A56-866C-51D3C0E05717&format=JSON&locationName=')
+    .then((response) => {
+        return response.json();
+    })
+    .then((jsonData) => {
+        pushData = jsonData.records.location;
+        for (let i = 0; i < pushData.length; i++) {
+            let weatherElement = pushData[i].weatherElement;
+            let weatherElementNames = [];
+            pushData2.push(weatherElement);
+        }
+        console.log("pushData2:", pushData2);
+    });
+}
+llll2();
 console.log()
 
 // let newCard = document.createElement("div")
